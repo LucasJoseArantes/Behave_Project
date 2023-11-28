@@ -70,7 +70,7 @@ def url_contains(context, text):
     if text in current_url:
         return True
     else: return False
-aaa
+
 def assert_url_contains(context, text):
 
     contains = url_contains(context, text)

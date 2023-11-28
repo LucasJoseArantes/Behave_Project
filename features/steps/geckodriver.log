@@ -1,0 +1,12 @@
+1701195586105	geckodriver	INFO	Listening on 127.0.0.1:63817
+1701195589156	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "-no-remote" "-profile" "C:\\Users\\User\\AppData\\Local\\Temp\\rust_mozprofilepk4GL5"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1701195590333	Marionette	INFO	Marionette enabled
+Dynamically enable window occlusion 0
+1701195591671	Marionette	INFO	Listening on port 63824
+Read port: 63824
+1701195591988	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://demostore.supersqa.com."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://demostore.supersqa.com."
+1701195621180	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
