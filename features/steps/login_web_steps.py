@@ -10,36 +10,28 @@ def go_to_page(context, page):
 @when("I type '{email}' into username of login form")
 def type_email_into_username_f_login_form(context, email):
 
-    email_locator_type = MY_ACCOUNT_LOCATORS['login']['login_username']['type']
-    email_locator_string = MY_ACCOUNT_LOCATORS['login']['login_username']['locator']
-
-    web_common.type_into_element(context, str(email) , email_locator_type , email_locator_string )
+    email_xpath = MY_ACCOUNT_LOCATORS['login']['login_username']
+    web_common.type_into_element(context, email , email_xpath)
 
 @when("I type '{password}' into password of login form")
 def type_pssword_into_username_f_login_form(context, password):
 
-    password_locator_type = MY_ACCOUNT_LOCATORS['login']['login_password']['type']
-    password_locator_string = MY_ACCOUNT_LOCATORS['login']['login_password']['locator']
-
-    web_common.type_into_element(context, str(password) , password_locator_type , password_locator_string )
+    password_xpath = MY_ACCOUNT_LOCATORS['login']['login_password']
+    web_common.type_into_element(context, str(password) , password_xpath )
 
 @when("I click on the 'login' button")
 def click_btn_in_f_login_form(context):
 
-    login_btn_locator_type = MY_ACCOUNT_LOCATORS['login']['login-btn']['type']
-    login_btn_locator_string = MY_ACCOUNT_LOCATORS['login']['login-btn']['locator']
-
-    web_common.click(context,login_btn_locator_type, login_btn_locator_string )
+    btn_xpath = MY_ACCOUNT_LOCATORS['login']['login-btn']
+    web_common.click(context, btn_xpath )
 
     pdb.set_trace()
 
 @then("I should see {user} displayed in the login message")
 def user_should_be_logged_in(context, user):
-    
-    success_message_locator_type = MY_ACCOUNT_LOCATORS['logged-in-successfully']['success_message_username']['type']
-    success_message_locator_string = MY_ACCOUNT_LOCATORS['logged-in-successfully']['success_message_username']['locator']
-
-    website_message = web_common.get_element_text(context,success_message_locator_type, success_message_locator_string )
+   
+    success_message_xpath = MY_ACCOUNT_LOCATORS['logged-in-successfully']['success_message_username']
+    website_message = web_common.get_element_text(context, success_message_xpath)
 
     print('++++++++++++++++++++++++++++++++')
     print('############ Expected Username: ' + user )

@@ -77,41 +77,20 @@ def assert_url_contains(context, text):
     assert contains, f"Current url '{context.driver.current_url}' does not contain test '{text}'."
 
 #======================================================================================#
-def find_element(context, locator_attribute, locator_text):
+def find_element(context, xpath_locator):
     """
     Finds an element and returns the element object.
     """
-
-    possible_locators = ["id", "xpath", "link text", "partial link text", "name", "tag name", "class name", "css selector"]
-
-    if locator_attribute not in possible_locators:
-        raise Exception('The locator attribute provided is not in the approved attributes. Or the spelling and format does not match.\
-                            The approved attributes are : %s ' % possible_locators)
-    try:
-        element = context.driver.find_element(locator_attribute, locator_text)
-        return element
-    except Exception as e:
-        raise Exception(e)
+    element = context.driver.find_element("xpath", xpath_locator)
+    return element
     
 #======================================================================================#
-def find_elements(context, locator_attribute, locator_text):
+def find_elements(context, xpath_locator):
     """
     Finds an element and returns the element object.
-    :param context:
-    :param locator_attribute: what to use to locate (example, id, class, xpath,....)
-    :param locator_text: the locator text (ex. the id, the class, the name,...)
     """
-
-    possible_locators = ["id", "xpath", "link text", "partial link text", "name", "tag name", "class name", "css selector"]
-
-    if locator_attribute not in possible_locators:
-        raise Exception('The locator attribute provided is not in the approved attributes. Or the spelling and format does not match.\
-                            The approved attributes are : %s ' % possible_locators)
-    try:
-        element = context.driver.find_elements(locator_attribute, locator_text)
-        return element
-    except Exception as e:
-        raise Exception(e)
+    element = context.driver.find_elements("xpath", xpath_locator)
+    return element
 
 #======================================================================================#
 def is_element_visible(element):
@@ -124,7 +103,7 @@ def is_element_visible(element):
     else:
         return False
 #======================================================================================#
-def assert_element_visible(context_or_element, locator_att=None, locator_text=None):
+def assert_element_visible(context_or_element, xpath_locator):
     '''
     Function to check if the passed in element is visible.
     Raises and exception if it is not exception.
@@ -132,24 +111,34 @@ def assert_element_visible(context_or_element, locator_att=None, locator_text=No
     if isinstance(context_or_element, webdriver.remote.webelement.WebElement):
         element = context_or_element
     else:
-        element = context_or_element.driver.find_element(locator_att, locator_text)
+        element = context_or_element.driver.find_element("xpath", xpath_locator)
 
     if not element.is_displayed():
         raise AssertionError('The element is not displayed')
 
-def type_into_element(context, input_value, locator_attribute, locator_text):
+def type_into_element(context, input_value, xpath_locator):
 
-    input_filed = context.driver.find_element(locator_attribute, locator_text)
+    input_filed = context.driver.find_element("xpath", xpath_locator)
     input_filed.send_keys(input_value)
 
-def click(context_or_element, locator_att=None, locator_text=None):
+def click(context_or_element, xpath_locator):
 
     if isinstance(context_or_element, webdriver.remote.webelement.WebElement):
         element = context_or_element
     else:
-        element = context_or_element.driver.find_element(locator_att, locator_text)
+        element = context_or_element.driver.find_element("xpath", xpath_locator)
 
     element.click()
+
+def get_element_text(context_or_element, xpath_locator):
+    if isinstance(context_or_element, webdriver.remote.webelement.WebElement):
+        element_text = context_or_element.text
+    else:
+        element = context_or_element.driver.find_element("xpath", xpath_locator)
+        element_text = element.text
+
+    return element_text
+
 
 # def element_contains_text(context_or_element, expected_text, locator_att, locator_text, case_sensitive=False):
 
@@ -194,12 +183,3 @@ def click(context_or_element, locator_att=None, locator_text=None):
 #     is_checked = element.get_attribute('checked')
 #     assert is_checked, f"The radio is not selected {element.get_attribute('name')}"
 #     # import pdb; pdb.set_trace()
-
-def get_element_text(context_or_element, locator_att=None, locator_text=None):
-    if isinstance(context_or_element, webdriver.remote.webelement.WebElement):
-        element_text = context_or_element.text
-    else:
-        element = context_or_element.driver.find_element(locator_att, locator_text)
-        element_text = element.text
-
-    return element_text
