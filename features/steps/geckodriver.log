@@ -53,3 +53,5 @@ Read port: 65076
 console.warn: LoginRecipes: "Falling back to a synchronous message for: http://demostore.supersqa.com."
 console.warn: LoginRecipes: "Falling back to a synchronous message for: http://demostore.supersqa.com."
 1701202211747	addons.xpi	ERROR	System addon update list error SyntaxError: XMLHttpRequest.open: 'http://%(server)s/dummy-system-addons.xml' is not a valid URL.
+1701204649313	Marionette	INFO	Stopped listening on port 65076
+Dynamically enable window occlusion 1

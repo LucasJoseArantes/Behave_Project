@@ -11,4 +11,3 @@ MY_ACCOUNT_LOCATORS = {
         'logout-btn' : '/html/body/div/div[2]/div/div[2]/main/article/div/div/nav/ul/li[6]/a'
     }
 }
-

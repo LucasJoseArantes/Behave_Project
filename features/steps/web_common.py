@@ -6,18 +6,19 @@ Functions that are not test or feature specific.
 from selenium import webdriver
 from configs import urlconfig
 from webdriver_manager.firefox import GeckoDriverManager
-
+from selenium.webdriver.firefox.options import Options
 
 def go_to(context, location):
-
+    firefox_options = Options()
+    firefox_options.add_argument('--headless')
+    firefox_options.add_argument('--start-maximized') 
+    gecko_path = GeckoDriverManager().install()
+    context.driver = webdriver.Firefox(executable_path=gecko_path ,options=firefox_options)
+    
     """
     Function to start an instance of the specified browser and navigate to the specified URL.
     :param location: the location or key in URLCONFIG for the URL to navigate to
     """
-
-    gecko_path = GeckoDriverManager().install()
-    context.driver = webdriver.Firefox(executable_path=gecko_path)
-
     # If the location does not start with 'http', assume it's a key in URLCONFIG
     if not location.startswith('http'):
         _url = urlconfig.URLCONFIG.get(location)
@@ -128,7 +129,10 @@ def click(context_or_element, xpath_locator):
     else:
         element = context_or_element.driver.find_element("xpath", xpath_locator)
 
-    element.click()
+    if(is_element_visible(element)):
+        element.click()
+    else:
+        raise AssertionError('The element is not displayed')
 
 def get_element_text(context_or_element, xpath_locator):
     if isinstance(context_or_element, webdriver.remote.webelement.WebElement):
