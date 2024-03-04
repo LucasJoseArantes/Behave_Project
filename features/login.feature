@@ -1,5 +1,3 @@
-@my_account_smoke
-
 Feature: My Account Smoke Test
 
     Background: Prepare the environment
