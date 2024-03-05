@@ -46,7 +46,7 @@ To customize test execution, follow these steps:
 | Set Headless Mode    | $env:HEADLESS_MODE="False" (default)     |
 
 
-Using Linters:
+## Using Linters:
 To utilize the Linters locally, execute the following commands:
 
 Isort:
