@@ -19,11 +19,11 @@ Note: if python is not installed, download and install [here](https://www.python
     python -m venv venv
 
 
-3. Activate the virtual environment with the following command:
+4. Activate the virtual environment with the following command:
     ```bash
     .\venv\Scripts\activate
 
-4. Install the dependencies listed in the requirements.txt file using the command:
+5. Install the dependencies listed in the requirements.txt file using the command:
     ```bash
     pip install -r requirements.txt
 
@@ -33,7 +33,6 @@ Ensure to configure the necessary environment variables to run the tests.
 ## Running Tests:
 To execute the tests, navigate to the project's root directory in the terminal and run the following command:
 
-    ```bash
     behave
 
 ### Customizing Test Execution:
@@ -51,7 +50,6 @@ To utilize the Linters locally, execute the following commands:
 
 Isort:
 
-    ```bash
     isort --diff ./features
     isort --check-only ./features
 
