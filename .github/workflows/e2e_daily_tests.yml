@@ -1,4 +1,4 @@
-name: Functional Tests - Daily Execution
+name: Daily Execution
 
 on:
   schedule:
@@ -6,31 +6,43 @@ on:
   workflow_dispatch:
 
 jobs:
-  run_code:
+  run-e2e-tests:
+    name: E2E Web Tests - Daily
+    env:
+      REPORT_JSON: e2e_tests_web_prod.json
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Install Firefox
+        uses: browser-actions/setup-firefox@v1
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.11'
+      - uses: actions/checkout@v3
 
-    - name: Verify Python installation
-      run: python --version
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.11"
 
-    - name: Create virtual environment
-      run: python -m venv venv
+      - name: Install python dependencies
+        run: pip install -r requirements.txt
 
-    - name: Activate virtual environment
-      run: |
-        . venv/bin/activate
-        python --version
+      - name: Run E2E Tests Web Prod - Firefox
+        run: |
+          $env:BROWSER="firefox"
+          $env:HEADLESS_MODE="False"
+          $env:SERVER="prod"
+          behave --tags=-xfail --format json.pretty --outfile e2e_tests_web_prod.json --format pretty
 
-    - name: Install dependencies
-      run: pip install -r requirements.txt
+      - uses: actions/upload-artifact@v3
+        if: ${{ failure() }}
+        with:
+          name: failed_tests_screenshots
+          path: ./reports/screenshots/*.png
+          retention-days: 7
 
-    - name: Run tests
-      run: behave
+      - name: Upload test results in JSON format
+        uses: actions/upload-artifact@v3
+        if: ${{ failure() }}
+        with:
+          name: ${{ env.REPORT_JSON }}
+          path: ./e2e_tests_web_prod.json
+          retention-days: 7
