@@ -1,0 +1,36 @@
+name: Functional Tests - Daily Execution
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+jobs:
+  run_code:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.11'
+
+    - name: Verify Python installation
+      run: python --version
+
+    - name: Create virtual environment
+      run: python -m venv venv
+
+    - name: Activate virtual environment
+      run: |
+        . venv/bin/activate
+        python --version
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Run tests
+      run: behave
