@@ -4,6 +4,8 @@
 
 This project aims to showcase the implementation of end-to-end (E2E) automated tests using Behavior Driven Development (BDD) methodology with Behave, a popular BDD framework in Python. The primary purpose is to demonstrate how to develop and execute automated tests following BDD principles, leveraging various tools and libraries such as Selenium for web automation, Pandas for file manipulation, Logging for test logging, Requests for API testing, and Linters for code quality improvements.
 
+[Link to testes Workflow](https://github.com/LucasJoseArantes/Behave_Project/actions/workflows/e2e_daily_tests.yml)
+
 ## Setup and Configuration:
 
 ### Setting up a Virtual Environment:
