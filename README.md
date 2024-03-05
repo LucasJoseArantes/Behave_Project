@@ -38,11 +38,12 @@ To execute the tests, navigate to the project's root directory in the terminal a
 ### Customizing Test Execution:
 To customize test execution, follow these steps:
 
-Description	Command
-Run specific scenario	behave -n "scenario_name"
-Run specific feature	behave -i "file_name.feature"
-Set Browser	$env:BROWSER="firefox" (default)
-Set Headless Mode	$env:HEADLESS_MODE="False" (default)
+| Description          | Command                                   |
+|----------------------|-------------------------------------------|
+| Run specific scenario| behave -n "scenario_name"                |
+| Run specific feature | behave -i "file_name.feature"            |
+| Set Browser          | $env:BROWSER="firefox" (default)         |
+| Set Headless Mode    | $env:HEADLESS_MODE="False" (default)     |
 
 
 Using Linters:
