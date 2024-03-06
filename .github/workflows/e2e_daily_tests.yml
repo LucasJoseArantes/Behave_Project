@@ -27,9 +27,6 @@ jobs:
 
       - name: Run E2E Tests Web Prod - Firefox
         run: |
-          $env:BROWSER="firefox"
-          $env:HEADLESS_MODE="False"
-          $env:SERVER="prod"
           behave --tags=-xfail --format json.pretty --outfile e2e_tests_web_prod.json --format pretty
 
       - uses: actions/upload-artifact@v3
