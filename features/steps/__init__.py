@@ -1,2 +1,1 @@
-import login_web_steps # noqa
-import login_web_screen # noqa
+from steps.login_web_steps import * # noqa

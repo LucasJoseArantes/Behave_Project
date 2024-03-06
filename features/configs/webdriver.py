@@ -1,17 +1,24 @@
 from selenium import webdriver
-from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
 from webdriver_manager.firefox import GeckoDriverManager
 
 def get_webdriver():
+
+    # Get the path of the webdriver
+    webdriver_path = GeckoDriverManager().install()
+
     # Set Firefox options
-    options = Options()
-    options.add_argument("--headless")  # Run Firefox in headless mode
+    options = FirefoxOptions()
+    # options.add_argument("--headless")  # Run Firefox in headless mode
     options.add_argument("--disable-notifications") # Disable browser notifications
-    options.add_argument("--window-size=1920,1080") # Set window size to 1920x1080
+
+    webdriver_class = webdriver.Firefox
 
     # Initialize the webdriver with Firefox and options
-    webdriver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
+    driver = webdriver_class(options=options)
 
+    # Maximize the window
+    driver.maximize_window()
 
-    return webdriver
+    return driver
 
