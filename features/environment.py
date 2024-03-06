@@ -4,6 +4,7 @@ from features.fixtures import save_screenshot_at_the_end_of_the_failed_tests
 from features.configs.webdriver import get_webdriver
 
 def before_all(context):
+    print("Starting the tests")
     context.webdriver = get_webdriver()
 
 def after_scenario(context, scenario):
@@ -12,3 +13,4 @@ def after_scenario(context, scenario):
 
 def after_all(context):
     context.webdriver.quit()
+    print("Tests Finished")

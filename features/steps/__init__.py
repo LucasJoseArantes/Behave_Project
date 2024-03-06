@@ -1,1 +1,1 @@
-from steps.login_web_steps import * # noqa
+from features.steps.login_web import * # noqa
