@@ -1,5 +1,4 @@
-behave==1.2.6
-requests==2.23.0
-selenium==4.0.0a5
-WooCommerce==2.1.1
+behave
+requests
+selenium
 webdriver_manager
