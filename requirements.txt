@@ -5,3 +5,4 @@ webdriver_manager
 isort
 black
 flake8
+retry

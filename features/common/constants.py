@@ -10,5 +10,7 @@ ENVIRONMENTS_DATA = {
     }
 }
 
-ENV = environ.get("ENV", "stage")
-info = ENVIRONMENTS_DATA[ENV]
+SERVER = environ.get("ENV", "stage")
+HEADLESS_MODE = environ.get("HEADLESS_MODE", "False").lower() not in ("false", "0", "f")
+BROWSER = environ.get("BROWSER", "firefox")
+info = ENVIRONMENTS_DATA[SERVER]

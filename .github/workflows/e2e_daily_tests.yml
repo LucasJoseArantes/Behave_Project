@@ -3,7 +3,19 @@ name: Daily Execution
 on:
   schedule:
     - cron: "0 0 * * *"
+
   workflow_dispatch:
+    inputs:
+      browser:
+        description: 'Select browser (e.g., firefox, chrome)'
+        required: false
+      headless_mode:
+        description: 'Set headless mode (True/False)'
+        required: false
+      parameters:
+        description: 'Parameters to be passed to behave'
+        required: false     
+        
 
 jobs:
   run-e2e-tests:
@@ -30,14 +42,16 @@ jobs:
 
       - name: Run E2E Tests Web Prod - Firefox
         run: |
-          behave --tags=-xfail --format json.pretty --outfile e2e_tests_web_prod.json --format pretty
+          $env:BROWSER="${{ github.event.inputs.browser }}"
+          $env:HEADLESS_MODE="${{ github.event.inputs.headless_mode }}"
+          behave ${{ github.event.inputs.parameters }} --tags=-xfail --format json.pretty --outfile e2e_tests_web_prod.json --format pretty
 
       - uses: actions/upload-artifact@v3
         if: ${{ failure() }}
         with:
           name: failed_tests_screenshots
           path: ./reports/screenshots/*.png
-          retention-days: 7
+          retention-days: 7"
 
       - name: Upload test results in JSON format
         uses: actions/upload-artifact@v3
