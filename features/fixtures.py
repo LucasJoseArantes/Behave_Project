@@ -4,7 +4,6 @@ import re
 from behave import fixture
 
 from features.configs.webdriver import get_webdriver
-
 from features.helpers.selenium_helpers import save_screenshot
 
 

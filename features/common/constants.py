@@ -1,4 +1,5 @@
 from os import environ
+
 from common.users import USERS_STAGE
 
 ENVIRONMENTS_DATA = {

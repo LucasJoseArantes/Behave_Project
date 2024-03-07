@@ -2,3 +2,6 @@ behave
 requests
 selenium
 webdriver_manager
+isort
+black
+flake8

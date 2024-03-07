@@ -1,6 +1,8 @@
 from behave import given, then, when
 from common.constants import info
+
 from features.steps.login_web.login_web_screen import LoginWebScreen
+
 
 @given("I access the login screen")
 def step_acess_login_screen(context):

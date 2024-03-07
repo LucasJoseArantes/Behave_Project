@@ -1,0 +1,288 @@
+[
+{
+  "elements": [
+    {
+      "keyword": "Background",
+      "location": "features/login.feature:4",
+      "name": "Prepare the environment",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/login.feature:5",
+          "name": "I access the login screen",
+          "step_type": "given"
+        }
+      ],
+      "type": "background"
+    },
+    {
+      "keyword": "Scenario",
+      "location": "features/login.feature:7",
+      "name": "Valid user should be able to login",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/login.feature:5",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/login_web/login_web_steps.py:5"
+          },
+          "name": "I access the login screen",
+          "result": {
+            "duration": 2.211050033569336,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/login.feature:8",
+          "match": {
+            "arguments": [
+              {
+                "value": "first"
+              }
+            ],
+            "location": "features/steps/login_web/login_web_steps.py:11"
+          },
+          "name": "I type 'first' user credentials into the login form",
+          "result": {
+            "duration": 0.16005539894104004,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/login.feature:9",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/login_web/login_web_steps.py:17"
+          },
+          "name": "I click on the login button",
+          "result": {
+            "duration": 1.7502875328063965,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/login.feature:10",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/login_web/login_web_steps.py:22"
+          },
+          "name": "I should be redirected to the logged in successfully screen",
+          "result": {
+            "duration": 0.005108356475830078,
+            "status": "passed"
+          },
+          "step_type": "then"
+        },
+        {
+          "keyword": "And",
+          "location": "features/login.feature:11",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/login_web/login_web_steps.py:27"
+          },
+          "name": "I should see the message on the logged in successfully screen",
+          "result": {
+            "duration": 0.06687211990356445,
+            "status": "passed"
+          },
+          "step_type": "then",
+          "table": {
+            "headings": [
+              "message"
+            ],
+            "rows": [
+              [
+                "Congratulations"
+              ],
+              [
+                "successfully logged in"
+              ]
+            ]
+          }
+        },
+        {
+          "keyword": "And",
+          "location": "features/login.feature:15",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/login_web/login_web_steps.py:34"
+          },
+          "name": "I should be able to click the log out button displayed on the logged in successfully screen",
+          "result": {
+            "duration": 1.4565961360931396,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario Outline",
+      "location": "features/login.feature:24",
+      "name": "Invalid user shouldn't be able to login -- @1.1 ",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/login.feature:5",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/login_web/login_web_steps.py:5"
+          },
+          "name": "I access the login screen",
+          "result": {
+            "duration": 0.36732029914855957,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/login.feature:18",
+          "match": {
+            "arguments": [
+              {
+                "value": "second"
+              }
+            ],
+            "location": "features/steps/login_web/login_web_steps.py:11"
+          },
+          "name": "I type 'second' user credentials into the login form",
+          "result": {
+            "duration": 0.08116030693054199,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/login.feature:19",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/login_web/login_web_steps.py:17"
+          },
+          "name": "I click on the login button",
+          "result": {
+            "duration": 1.2450106143951416,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/login.feature:20",
+          "match": {
+            "arguments": [
+              {
+                "name": "message",
+                "value": "Your username is invalid!"
+              }
+            ],
+            "location": "features/steps/login_web/login_web_steps.py:39"
+          },
+          "name": "I should see the message \"Your username is invalid!\" on the login screen",
+          "result": {
+            "duration": 1.0553905963897705,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    },
+    {
+      "keyword": "Scenario Outline",
+      "location": "features/login.feature:25",
+      "name": "Invalid user shouldn't be able to login -- @1.2 ",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "features/login.feature:5",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/login_web/login_web_steps.py:5"
+          },
+          "name": "I access the login screen",
+          "result": {
+            "duration": 0.3842802047729492,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "When",
+          "location": "features/login.feature:18",
+          "match": {
+            "arguments": [
+              {
+                "value": "third"
+              }
+            ],
+            "location": "features/steps/login_web/login_web_steps.py:11"
+          },
+          "name": "I type 'third' user credentials into the login form",
+          "result": {
+            "duration": 0.11709117889404297,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "And",
+          "location": "features/login.feature:19",
+          "match": {
+            "arguments": [],
+            "location": "features/steps/login_web/login_web_steps.py:17"
+          },
+          "name": "I click on the login button",
+          "result": {
+            "duration": 1.2469091415405273,
+            "status": "passed"
+          },
+          "step_type": "when"
+        },
+        {
+          "keyword": "Then",
+          "location": "features/login.feature:20",
+          "match": {
+            "arguments": [
+              {
+                "name": "message",
+                "value": "Your password is invalid!"
+              }
+            ],
+            "location": "features/steps/login_web/login_web_steps.py:39"
+          },
+          "name": "I should see the message \"Your password is invalid!\" on the login screen",
+          "result": {
+            "duration": 1.0187504291534424,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "features/login.feature:2",
+  "name": "Login screen tests",
+  "status": "passed",
+  "tags": [
+    "web_ui"
+  ]
+}
+]

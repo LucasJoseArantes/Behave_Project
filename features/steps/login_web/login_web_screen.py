@@ -1,7 +1,10 @@
-from features.helpers.selenium_helpers import navigate_to_url, assert_word_in_message , assert_message_matches , assert_redirect_url , wait_element, click_element 
-
 from features.common.element_locators import SELECTORS
-from features.common.constants import info
+from features.helpers.selenium_helpers import (assert_message_matches,
+                                               assert_redirect_url,
+                                               assert_word_in_message,
+                                               click_element, navigate_to_url,
+                                               wait_element)
+
 
 class LoginWebScreen:
     def __init__(self, webdriver):

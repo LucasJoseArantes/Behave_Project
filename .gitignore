@@ -1,7 +1,4 @@
 venv/
 geckodriver.log
-features/steps/__pycache__/__init__.cpython-311.pyc
 *.pyc
-*.pyc
-*.pyc
-*.pyc
+reports/
