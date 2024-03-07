@@ -11,6 +11,9 @@ jobs:
     env:
       REPORT_JSON: e2e_tests_web_prod.json
     runs-on: [windows-latest]
+    permissions:
+      contents: read
+      actions: read
     steps:
       - name: Install Firefox
         uses: browser-actions/setup-firefox@v1
