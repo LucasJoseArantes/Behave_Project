@@ -26,11 +26,11 @@
           "location": "features/login.feature:5",
           "match": {
             "arguments": [],
-            "location": "features/steps/login_web/login_web_steps.py:5"
+            "location": "features/steps/login_web/login_web_steps.py:7"
           },
           "name": "I access the login screen",
           "result": {
-            "duration": 2.211050033569336,
+            "duration": 3.154151439666748,
             "status": "passed"
           },
           "step_type": "given"
@@ -44,11 +44,11 @@
                 "value": "first"
               }
             ],
-            "location": "features/steps/login_web/login_web_steps.py:11"
+            "location": "features/steps/login_web/login_web_steps.py:13"
           },
           "name": "I type 'first' user credentials into the login form",
           "result": {
-            "duration": 0.16005539894104004,
+            "duration": 0.2680015563964844,
             "status": "passed"
           },
           "step_type": "when"
@@ -58,11 +58,11 @@
           "location": "features/login.feature:9",
           "match": {
             "arguments": [],
-            "location": "features/steps/login_web/login_web_steps.py:17"
+            "location": "features/steps/login_web/login_web_steps.py:19"
           },
           "name": "I click on the login button",
           "result": {
-            "duration": 1.7502875328063965,
+            "duration": 2.1275575160980225,
             "status": "passed"
           },
           "step_type": "when"
@@ -72,11 +72,11 @@
           "location": "features/login.feature:10",
           "match": {
             "arguments": [],
-            "location": "features/steps/login_web/login_web_steps.py:22"
+            "location": "features/steps/login_web/login_web_steps.py:24"
           },
           "name": "I should be redirected to the logged in successfully screen",
           "result": {
-            "duration": 0.005108356475830078,
+            "duration": 0.0039997100830078125,
             "status": "passed"
           },
           "step_type": "then"
@@ -86,11 +86,11 @@
           "location": "features/login.feature:11",
           "match": {
             "arguments": [],
-            "location": "features/steps/login_web/login_web_steps.py:27"
+            "location": "features/steps/login_web/login_web_steps.py:29"
           },
           "name": "I should see the message on the logged in successfully screen",
           "result": {
-            "duration": 0.06687211990356445,
+            "duration": 0.09499859809875488,
             "status": "passed"
           },
           "step_type": "then",
@@ -113,11 +113,11 @@
           "location": "features/login.feature:15",
           "match": {
             "arguments": [],
-            "location": "features/steps/login_web/login_web_steps.py:34"
+            "location": "features/steps/login_web/login_web_steps.py:36"
           },
           "name": "I should be able to click the log out button displayed on the logged in successfully screen",
           "result": {
-            "duration": 1.4565961360931396,
+            "duration": 1.6210572719573975,
             "status": "passed"
           },
           "step_type": "then"
@@ -137,11 +137,11 @@
           "location": "features/login.feature:5",
           "match": {
             "arguments": [],
-            "location": "features/steps/login_web/login_web_steps.py:5"
+            "location": "features/steps/login_web/login_web_steps.py:7"
           },
           "name": "I access the login screen",
           "result": {
-            "duration": 0.36732029914855957,
+            "duration": 0.5370004177093506,
             "status": "passed"
           },
           "step_type": "given"
@@ -155,11 +155,11 @@
                 "value": "second"
               }
             ],
-            "location": "features/steps/login_web/login_web_steps.py:11"
+            "location": "features/steps/login_web/login_web_steps.py:13"
           },
           "name": "I type 'second' user credentials into the login form",
           "result": {
-            "duration": 0.08116030693054199,
+            "duration": 0.0839989185333252,
             "status": "passed"
           },
           "step_type": "when"
@@ -169,11 +169,11 @@
           "location": "features/login.feature:19",
           "match": {
             "arguments": [],
-            "location": "features/steps/login_web/login_web_steps.py:17"
+            "location": "features/steps/login_web/login_web_steps.py:19"
           },
           "name": "I click on the login button",
           "result": {
-            "duration": 1.2450106143951416,
+            "duration": 1.2460410594940186,
             "status": "passed"
           },
           "step_type": "when"
@@ -188,11 +188,11 @@
                 "value": "Your username is invalid!"
               }
             ],
-            "location": "features/steps/login_web/login_web_steps.py:39"
+            "location": "features/steps/login_web/login_web_steps.py:41"
           },
           "name": "I should see the message \"Your username is invalid!\" on the login screen",
           "result": {
-            "duration": 1.0553905963897705,
+            "duration": 1.022958517074585,
             "status": "passed"
           },
           "step_type": "then"
@@ -212,11 +212,11 @@
           "location": "features/login.feature:5",
           "match": {
             "arguments": [],
-            "location": "features/steps/login_web/login_web_steps.py:5"
+            "location": "features/steps/login_web/login_web_steps.py:7"
           },
           "name": "I access the login screen",
           "result": {
-            "duration": 0.3842802047729492,
+            "duration": 0.5540010929107666,
             "status": "passed"
           },
           "step_type": "given"
@@ -230,11 +230,11 @@
                 "value": "third"
               }
             ],
-            "location": "features/steps/login_web/login_web_steps.py:11"
+            "location": "features/steps/login_web/login_web_steps.py:13"
           },
           "name": "I type 'third' user credentials into the login form",
           "result": {
-            "duration": 0.11709117889404297,
+            "duration": 0.11299920082092285,
             "status": "passed"
           },
           "step_type": "when"
@@ -244,11 +244,11 @@
           "location": "features/login.feature:19",
           "match": {
             "arguments": [],
-            "location": "features/steps/login_web/login_web_steps.py:17"
+            "location": "features/steps/login_web/login_web_steps.py:19"
           },
           "name": "I click on the login button",
           "result": {
-            "duration": 1.2469091415405273,
+            "duration": 1.2430474758148193,
             "status": "passed"
           },
           "step_type": "when"
@@ -263,11 +263,11 @@
                 "value": "Your password is invalid!"
               }
             ],
-            "location": "features/steps/login_web/login_web_steps.py:39"
+            "location": "features/steps/login_web/login_web_steps.py:41"
           },
           "name": "I should see the message \"Your password is invalid!\" on the login screen",
           "result": {
-            "duration": 1.0187504291534424,
+            "duration": 1.0252115726470947,
             "status": "passed"
           },
           "step_type": "then"
