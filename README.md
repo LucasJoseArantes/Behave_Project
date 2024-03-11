@@ -6,6 +6,8 @@ This project aims to showcase the implementation of end-to-end (E2E) automated t
 
 [Link to Tests Workflow](https://github.com/LucasJoseArantes/Behave_Project/actions/workflows/e2e_daily_tests.yml)
 
+[![Daily Execution](https://github.com/LucasJoseArantes/Behave_Project/actions/workflows/e2e_daily_tests.yml/badge.svg)](https://github.com/LucasJoseArantes/Behave_Project/actions/workflows/e2e_daily_tests.yml)
+
 ## Setup and Configuration:
 
 ### Setting up a Virtual Environment:
