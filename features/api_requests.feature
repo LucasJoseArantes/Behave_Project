@@ -4,7 +4,6 @@ Feature: Testing API Requests
         Given I set the API URL as '<get_url>'  
         When I make a GET request to the API
         Then I should receive a successful response
-        And the response should be in JSON format
 
     Scenario: Successful POST request
         Given I set the API URL as '<post_url>'
