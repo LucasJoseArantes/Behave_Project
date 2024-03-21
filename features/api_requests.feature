@@ -21,16 +21,4 @@ Feature: Testing API Requests
     #     | invalid_key_1 |
     #     | invalid_key_2 |
 
-    # Scenario Outline: Resource not found should return 404
-    #     Given I set the API URL as "<>"
-    #     When I make a GET request to the API
-    #     And I set a non-existing '<resource>'
-    #     Then I should receive a 404 Not Found response
-
-    #     Examples:
-    #     | resource |
-    #     | resource_1 |
-    #     | resource_2 |
-
-
 
