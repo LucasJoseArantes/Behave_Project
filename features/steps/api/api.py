@@ -13,5 +13,8 @@ class ApiInterface:
     def check_adress_response(self, response_json_adress, expected_adress):
         log.info(f"Response json: {response_json_adress}")
         assert response_json_adress == expected_adress, f"Expected adress {expected_adress}, but got {response_json_adress}"
+
+    def make_post_adress_request(context, url, data):
+        return _make_request(url, context , "POST", data)
         
     
