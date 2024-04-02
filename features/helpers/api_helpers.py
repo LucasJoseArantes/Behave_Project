@@ -3,17 +3,24 @@ import logging as log
 import requests
 from retry import retry
 from urllib3.exceptions import ConnectTimeoutError
+from unidecode import unidecode
 
 @retry(ConnectTimeoutError, tries=2, delay=5)
-def _make_request(url, context, method):
+def _make_request(url, context, method , data):
     try:
-        response = requests.request(method, url, headers=context.headers, timeout=30)
-        response.raise_for_status()
+        log.info(f"Making a {method} request to {url}")
+        response = requests.request(method, url, timeout=30, data= data if method == "POST" or "PATCH" else None )
+        
+        return response
 
-        if response.text:
-            return response.json()
-        else:
-            return None
     except ConnectTimeoutError as e:
         log.error(f"Connect Timeout Error: {str(e)}")
         raise e
+    
+def format_string(value):
+    if isinstance(value, str):
+        return unidecode(value)
+    elif isinstance(value, dict):
+        return {key: format_string(subvalue) for key, subvalue in value.items()}
+    else:
+        return value
