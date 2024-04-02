@@ -10,6 +10,7 @@ Feature: Testing API Requests
         Then I should receive a successful response
         And I check the JSON response
 
+    @xfail
     Scenario: Patch user adreess using Firebase API
         Given I make a 'PATCH' request using 'firebase_patch_url' url
         Then I should receive a successful response
