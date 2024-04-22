@@ -22,7 +22,6 @@ Note: if python is not installed, download and install [here](https://www.python
     ```bash
     python -m venv venv
 
-
 4. Activate the virtual environment with the following command:
     ```bash
     .\venv\Scripts\activate
@@ -31,38 +30,20 @@ Note: if python is not installed, download and install [here](https://www.python
     ```bash
     pip install -r requirements.txt
 
-### Configuring Credentials:
-Ensure to configure the necessary environment variables to run the tests.
-
 ## Running Tests:
 To execute the tests, navigate to the project's root directory in the terminal and run the following command:
 
     behave
 
-### Customizing Test Execution:
 To customize test execution, follow these steps:
 
-| Description          | Command                                   |
-|----------------------|-------------------------------------------|
-| Run specific scenario| behave -n "scenario_name"                |
-| Run specific feature | behave -i "file_name.feature"            |
-| Set Browser          | $env:BROWSER="firefox" (default)         |
-| Set Headless Mode    | $env:HEADLESS_MODE="False" (default)     |
-
+    | Run specific scenario   | behave -n "scenario_name"                   |
+    | Run specific feature    | behave -i "file_name.feature"               |
+    | Set Browser             | $env:BROWSER="firefox" (default)            |
+    | Set Headless Mode       | $env:HEADLESS_MODE="False" (default)        |
 
 ## Using Linters:
-To utilize the Linters locally, execute the following commands:
 
-Isort:
-
-    isort --diff ./features
-    isort --check-only ./features
-
-Black:    
-
-    black --line-length 120 --diff ./features
-    black --line-length 120 --check ./features
-    
-Flake8:
-
+    isort ./features
+    black --line-length 120 ./features
     flake8 ./features
