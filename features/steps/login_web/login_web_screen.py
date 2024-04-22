@@ -1,9 +1,9 @@
 from features.common.element_locators import SELECTORS
-from features.helpers.selenium_helpers import (assert_message_matches,
-                                               assert_redirect_url,
-                                               assert_word_in_message,
-                                               click_element, navigate_to_url,
-                                               wait_element)
+from features.helpers.selenium_helpers import (verify_message_matches,
+                                               confirm_redirected_url,
+                                               verify_word_in_message,
+                                               click_on_element, navigate_to_url,
+                                               wait_for_element)
 
 
 class LoginWebScreen:
