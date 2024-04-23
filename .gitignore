@@ -3,3 +3,4 @@ geckodriver.log
 *.pyc
 reports/
 e2e_tests_web_prod.json
+.flake8

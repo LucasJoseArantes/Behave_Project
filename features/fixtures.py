@@ -19,11 +19,13 @@ def save_screenshot_at_the_end_of_the_failed_tests(context, scenario_name):
         file_name = f"./reports/e2e_screenshots/{image_name}.png"
         save_screenshot(context.webdriver, file_name)
 
+
 @fixture
 def config_log(context):
     LOGS_FOLDER = "./reports/logs"
     pathlib.Path(LOGS_FOLDER).mkdir(parents=True, exist_ok=True)
     logging.config.fileConfig("./logging.ini")
+
 
 # Considering the tag @web_ui in the feature file, starts the webdriver and quits it after the tests
 @fixture

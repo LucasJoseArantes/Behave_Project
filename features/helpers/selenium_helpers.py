@@ -53,8 +53,7 @@ def verify_message_matches(webdriver, selector, expected_message, wait_time=60):
         time.sleep(1)
         message_element = wait_for_element(webdriver, selector, wait_time)
         assert message_element.text == expected_message, (
-            f"Expected message '{expected_message}' does not match the actual message: "
-            f"'{message_element.text}'"
+            f"Expected message '{expected_message}' does not match the actual message: " f"'{message_element.text}'"
         )
         log.info(f"Message '{expected_message}' matches the displayed message.")
     except (TimeoutException, AssertionError) as e:
@@ -67,8 +66,7 @@ def verify_word_in_message(webdriver, selector, expected_word, wait_time=60):
     try:
         message_element = wait_for_element(webdriver, selector, wait_time)
         assert expected_word in message_element.text, (
-            f"Expected word '{expected_word}' is not found in the displayed message: "
-            f"'{message_element.text}'"
+            f"Expected word '{expected_word}' is not found in the displayed message: " f"'{message_element.text}'"
         )
         log.info(f"Expected word '{expected_word}' found in the message.")
     except (TimeoutException, AssertionError) as e:

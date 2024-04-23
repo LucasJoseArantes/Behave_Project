@@ -1,16 +1,16 @@
 from os import environ
 
-from common.users import USERS_STAGE
 from common.adress import ADRESS_DATA
 from common.url_requests import URL_REQUESTS
+from common.users import USERS_STAGE
 
 ENVIRONMENTS_DATA = {
     "stage": {
         "users": USERS_STAGE,
         "login_screen": "https://practicetestautomation.com/practice-test-login/",
         "logged_in_successfully_screen": "https://practicetestautomation.com/logged-in-successfully/",
-        "url_requests" : URL_REQUESTS,
-        "adress_data" : ADRESS_DATA
+        "url_requests": URL_REQUESTS,
+        "adress_data": ADRESS_DATA,
     }
 }
 
