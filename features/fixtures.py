@@ -17,7 +17,7 @@ def save_screenshot_at_the_end_of_the_failed_tests(context, scenario_name):
 
         image_name = re.sub(r"[^a-zA-Z]", "_", scenario_name).lower()
         file_name = f"./reports/e2e_screenshots/{image_name}.png"
-        save_screenshot(context.webdriver, file_name)
+        take_screenshot(context.webdriver, file_name)
 
 
 @fixture

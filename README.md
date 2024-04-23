@@ -33,17 +33,5 @@ Note: if python is not installed, download and install [here](https://www.python
 ## Running Tests:
 To execute the tests, navigate to the project's root directory in the terminal and run the following command:
 
-    behave
-
-To customize test execution, follow these steps:
-
-    | Run specific scenario   | behave -n "scenario_name"                   |
-    | Run specific feature    | behave -i "file_name.feature"               |
-    | Set Browser             | $env:BROWSER="firefox" (default)            |
-    | Set Headless Mode       | $env:HEADLESS_MODE="False" (default)        |
-
-## Using Linters:
-
-    isort ./features
-    black --line-length 120 ./features
-    flake8 ./features
+    - behave (To Run all scenarios)
+    - behave -n "scenario_name" (To Run specific scenario)
